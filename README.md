@@ -1,4 +1,8 @@
 # codecheck
+## Flutterのバージョン
+使用するFlutterのバージョンは`3.13.9`
+＊2023/10/28 プロジェクト作成時の最新
+
 ## 対象OSバージョン
 
 |  OS  |  Version  |
@@ -20,5 +24,9 @@ https://zenn.dev/altiveinc/articles/flutter-version-management
 - 下記コマンドを実行し、Flutterのバージョンをインストールする
 ```
 fvm install
+````
+- 下記コマンドを実行し、Flutterのバージョンが`3.13.9`であることを確認する
+```
+fvm flutter --version
 ````
 以降、本プロジェクトで`flutter`コマンドを使う場合、`fvm flutter`コマンドを使用する必要がある。

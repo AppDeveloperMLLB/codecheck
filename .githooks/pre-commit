@@ -1,0 +1,14 @@
+# コミットされるファイルの中から .dart ファイルだけを取得
+dart_files=$(git diff --cached --name-only --diff-filter=d | grep '\.dart$')
+
+# .dart ファイルが存在する場合、それらのファイルをフォーマット
+if [ ! -z "$dart_files" ]; then
+    echo "Formatting Dart files:"
+    echo "$dart_files"
+    dart format $dart_files
+
+    # フォーマット後の変更を再度ステージング
+    git add $dart_files
+else
+    echo "No Dart files to be formatted."
+fi

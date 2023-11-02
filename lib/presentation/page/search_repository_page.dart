@@ -1,3 +1,4 @@
+import 'package:codecheck/presentation/app_strings.dart';
 import 'package:codecheck/presentation/validator/search_text_validator.dart';
 import 'package:codecheck/presentation/widget/github_repository_list_view.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,9 @@ class SearchRepositoryPage extends HookConsumerWidget {
     final searchWord = useState('');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search Repository'),
+        title: const Text(
+          AppStrings.searchRepositoryPageTitle,
+        ),
       ),
       body: SafeArea(
         child: Form(
@@ -25,7 +28,7 @@ class SearchRepositoryPage extends HookConsumerWidget {
               TextFormField(
                 controller: searchTextController,
                 decoration: const InputDecoration(
-                  labelText: 'Search Text',
+                  labelText: AppStrings.searchTextLabel,
                 ),
                 validator: (text) {
                   return SearchTextValidator.validate(text);
@@ -37,7 +40,9 @@ class SearchRepositoryPage extends HookConsumerWidget {
                     searchWord.value = searchTextController.text;
                   }
                 },
-                child: const Text('Search'),
+                child: const Text(
+                  AppStrings.searchButtonLabel,
+                ),
               ),
               if (searchWord.value.isNotEmpty)
                 Expanded(

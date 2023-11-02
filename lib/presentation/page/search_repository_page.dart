@@ -1,3 +1,4 @@
+import 'package:codecheck/presentation/validator/search_text_validator.dart';
 import 'package:codecheck/presentation/widget/github_repository_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -27,10 +28,7 @@ class SearchRepositoryPage extends HookConsumerWidget {
                   labelText: 'Search Text',
                 ),
                 validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Please input search text';
-                  }
-                  return null;
+                  return SearchTextValidator.validate(text);
                 },
               ),
               ElevatedButton(

@@ -14,7 +14,9 @@ class GithubRepositoryListView extends HookConsumerWidget {
       githubRepositoriesProvider(searchWord),
     );
     if (repositories.isLoading) {
-      return const CircularProgressIndicator();
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
     }
 
     if (repositories.hasError) {
@@ -25,22 +27,11 @@ class GithubRepositoryListView extends HookConsumerWidget {
       itemCount: repositories.value?.length ?? 0,
       itemBuilder: (context, index) {
         final repository = repositories.value![index];
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("fullName : ${repository.fullName}"),
-            Image.network(
-              repository.owner?.avatarUrl ?? '',
-              width: 100,
-              height: 100,
-            ),
-            Text("language : ${repository.language ?? '-'}"),
-            Text("stargazersCount : ${repository.stargazersCount}"),
-            Text("watchersCount : ${repository.watchersCount}"),
-            Text("forksCount : ${repository.forksCount}"),
-            Text("openIssuesCount : ${repository.openIssuesCount}"),
-          ],
+        return ListTile(
+          title: Text(
+            repository.fullName,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
         );
       },
       separatorBuilder: (context, index) {

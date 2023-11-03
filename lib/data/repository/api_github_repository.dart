@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:codecheck/core/exception/service_unavailable_exception.dart';
 import 'package:codecheck/core/exception/unexpected_exception.dart';
 import 'package:codecheck/core/exception/client_exception.dart';
 import 'package:codecheck/data/request/search_repositories_request.dart';
@@ -46,7 +47,7 @@ class APIGithubRepository implements GithubRepository {
 
       return list;
     } else if (response.statusCode == StatusCode.serviceUnvalilable) {
-      throw UnexpectedException(
+      throw ServiceUnavailableException(
         response.body,
         response.statusCode,
       );

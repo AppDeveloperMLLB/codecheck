@@ -1,4 +1,5 @@
 import 'package:codecheck/presentation/app_strings.dart';
+import 'package:codecheck/presentation/exception_message.dart';
 import 'package:codecheck/presentation/provider/github_repositories_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -23,7 +24,7 @@ class GithubRepositoryListView extends HookConsumerWidget {
     if (repositories.hasError) {
       return Center(
         child: Text(
-          repositories.error.toString(),
+          ExceptionMessage.get(repositories.error),
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Theme.of(context).colorScheme.error,
               ),
@@ -41,7 +42,7 @@ class GithubRepositoryListView extends HookConsumerWidget {
     }
 
     return ListView.separated(
-      itemCount: repositories.value?.length ?? 0,
+      itemCount: repositories.value!.length,
       itemBuilder: (context, index) {
         final repository = repositories.value![index];
         return ListTile(

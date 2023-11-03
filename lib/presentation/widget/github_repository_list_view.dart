@@ -1,3 +1,4 @@
+import 'package:codecheck/presentation/app_strings.dart';
 import 'package:codecheck/presentation/provider/github_repositories_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -20,7 +21,23 @@ class GithubRepositoryListView extends HookConsumerWidget {
     }
 
     if (repositories.hasError) {
-      return Text(repositories.error.toString());
+      return Center(
+        child: Text(
+          repositories.error.toString(),
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: Theme.of(context).colorScheme.error,
+              ),
+        ),
+      );
+    }
+
+    if (repositories.value == null || repositories.value!.isEmpty) {
+      return Center(
+        child: Text(
+          AppStrings.repositoryNotFoundMessage,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+      );
     }
 
     return ListView.separated(

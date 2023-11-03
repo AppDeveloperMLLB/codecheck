@@ -10,4 +10,10 @@ class AppStrings {
       'Please check your network connection.';
   static const String unexpectedErrorMessage =
       'An unexpected error has occurred.';
+  static const String repositoryDetailsPageTitle = 'Repository Details';
+  static const String language = 'Language';
+  static const String stargazersCount = "Stargazers count";
+  static const String watchersCount = "Watchers count";
+  static const String forksCount = "Forks count";
+  static const String issuesCount = "Issues count";
 }

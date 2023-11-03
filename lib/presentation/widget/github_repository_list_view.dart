@@ -14,7 +14,9 @@ class GithubRepositoryListView extends HookConsumerWidget {
       githubRepositoriesProvider(searchWord),
     );
     if (repositories.isLoading) {
-      return const CircularProgressIndicator();
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
     }
 
     if (repositories.hasError) {

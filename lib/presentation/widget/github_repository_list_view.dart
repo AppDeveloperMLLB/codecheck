@@ -1,7 +1,9 @@
+import 'package:codecheck/core/router/app_route.dart';
 import 'package:codecheck/presentation/app_strings.dart';
 import 'package:codecheck/presentation/exception_message.dart';
 import 'package:codecheck/presentation/provider/github_repositories_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class GithubRepositoryListView extends HookConsumerWidget {
@@ -46,6 +48,12 @@ class GithubRepositoryListView extends HookConsumerWidget {
       itemBuilder: (context, index) {
         final repository = repositories.value![index];
         return ListTile(
+          onTap: () {
+            context.go(
+              AppRoute.repositoryDetails.fullPath,
+              extra: repository,
+            );
+          },
           title: Text(
             repository.fullName,
             style: Theme.of(context).textTheme.titleLarge,

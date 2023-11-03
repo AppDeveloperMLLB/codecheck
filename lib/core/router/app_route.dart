@@ -6,7 +6,7 @@ enum AppRoute {
   ),
   repositoryDetails(
     fullPath: '/detaills',
-    relativePath: '/detaills',
+    relativePath: 'detaills',
     name: 'repository-details',
   );
 

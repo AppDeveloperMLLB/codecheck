@@ -16,4 +16,5 @@ class AppStrings {
   static const String watchersCount = "Watchers count";
   static const String forksCount = "Forks count";
   static const String issuesCount = "Issues count";
+  static const String noImage = "No Image";
 }

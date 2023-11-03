@@ -1,3 +1,4 @@
+import 'package:codecheck/presentation/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -16,13 +17,11 @@ class AvatarImage extends HookConsumerWidget {
     }
 
     return url == null
-        ? Container(
-            decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.5),
-              borderRadius: BorderRadius.circular(90),
-            ),
+        ? _createContainer(
             child: const Center(
-              child: Text("No Image"),
+              child: Text(
+                AppStrings.noImage,
+              ),
             ),
           )
         : ClipRRect(
@@ -37,11 +36,7 @@ class AvatarImage extends HookConsumerWidget {
                 return const Center(child: CircularProgressIndicator());
               },
               errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(90),
-                  ),
+                return _createContainer(
                   child: IconButton(
                     icon: const Icon(Icons.refresh),
                     onPressed: () {
@@ -58,5 +53,15 @@ class AvatarImage extends HookConsumerWidget {
               },
             ),
           );
+  }
+
+  Widget _createContainer({required Widget child}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(90),
+      ),
+      child: child,
+    );
   }
 }

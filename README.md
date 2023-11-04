@@ -12,6 +12,16 @@
 
 ＊2023/10/28 プロジェクト作成時
 
+## 環境設定ファイル
+GitHubの認証トークンがないとAPI利用時に制限でエラーになることがある。  
+検索結果が少ない場合は問題ないが、検索結果が多い場合制限に引っかかる。  
+エラーなく動作させるために、[こちら](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-token-1)の手順でトークンの発行を行う必要がある。  
+トークンを発行したら、以下の手順で設定する。  
+- `config.json`の`token`に設定
+- 実行またはビルド時、`--dart-define-from-file=config.json`をつける  
+(VSCodeのlaunch.jsonには、`--dart-define-from-file=config.json`を定義しているので、VSCodeからの実行では何もしなくて問題ない)  
+(上記は設定しなくてもアプリを利用可能。ただ、検索結果が多いとエラーになる)  
+
 ## 開発環境構築手順
 本プロジェクトでは、開発環境整備のため、以下のことを行なっている。
 - fvmでFlutterのバージョン管理

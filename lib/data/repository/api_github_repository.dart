@@ -11,10 +11,6 @@ import 'package:codecheck/domain/repository/github_repository.dart';
 import 'package:http/http.dart' as http;
 
 class APIGithubRepository implements GithubRepository {
-  final headers = {
-    'Accept': 'application/vnd.github+json',
-  };
-
   @override
   Future<List<GithubRepositoryData>> fetchRepositories({
     required String searchWord,
@@ -67,7 +63,7 @@ class APIGithubRepository implements GithubRepository {
       // APIを実行
       response = await http.get(
         url,
-        headers: headers,
+        headers: _getHeaders(),
       );
     } catch (e) {
       throw ClientException(e.toString());
@@ -107,7 +103,7 @@ class APIGithubRepository implements GithubRepository {
     final uri = Uri.parse(url);
     final response = await http.get(
       uri,
-      headers: headers,
+      headers: _getHeaders(),
     );
 
     if (response.statusCode == StatusCode.ok) {
@@ -119,5 +115,13 @@ class APIGithubRepository implements GithubRepository {
       response.body,
       response.statusCode,
     );
+  }
+
+  Map<String, String> _getHeaders() {
+    const token = String.fromEnvironment("token");
+    return {
+      'Accept': 'application/vnd.github+json',
+      if (token.isNotEmpty) 'Authorization': 'Bearer $token'
+    };
   }
 }

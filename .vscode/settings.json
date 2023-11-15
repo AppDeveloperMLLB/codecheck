@@ -9,6 +9,8 @@
     "files.watcherExclude": {
         "**/.fvm": true
     },
+    "extensions.ignoreRecommendations": false,
+    // Code Spell Checkerで無視したい単語を指定
     "cSpell.words": [
         "afafafafdjiehafhfisahfoiehao",
         "autovalidate",

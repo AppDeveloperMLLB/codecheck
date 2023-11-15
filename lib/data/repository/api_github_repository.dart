@@ -83,7 +83,7 @@ class APIGithubRepository implements GithubRepository {
       }
     }
 
-    if (response.statusCode == StatusCode.serviceUnvalilable) {
+    if (response.statusCode == StatusCode.serviceUnavailable) {
       throw ServiceUnavailableException(
         response.body,
         response.statusCode,

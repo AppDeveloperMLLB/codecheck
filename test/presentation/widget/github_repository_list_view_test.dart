@@ -75,14 +75,14 @@ void main() {
   );
 
   testWidgets(
-    'should show service unvalilable error message when ServiceUnavailableException occurred.',
+    'should show service unavailable error message when ServiceUnavailableException occurred.',
     (WidgetTester tester) async {
       await tester.pumpWidget(
         _create(
           override: githubRepositoriesProvider.overrideWith(
             (ref, id) => throw ServiceUnavailableException(
               "message",
-              StatusCode.serviceUnvalilable,
+              StatusCode.serviceUnavailable,
             ),
           ),
         ),

@@ -3,6 +3,7 @@ dart_files=$(git diff --cached --name-only --diff-filter=d | grep '\.dart$')
 
 # .dart ファイルが存在する場合、それらのファイルをフォーマット
 if [ ! -z "$dart_files" ]; then
+    # フォーマットを実行
     echo "Formatting Dart files:"
     echo "$dart_files"
     dart format $dart_files

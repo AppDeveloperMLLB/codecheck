@@ -7,4 +7,6 @@ class ClientException implements Exception {
   String toString() {
     return 'ClientException{message: $message}';
   }
+
+  String get errorMessage => message;
 }

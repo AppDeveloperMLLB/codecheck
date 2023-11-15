@@ -49,7 +49,7 @@ void main() {
           override: githubRepositoriesProvider.overrideWith(
             (ref, id) => throw ServiceUnavailableException(
               "service unavailable exception",
-              StatusCode.serviceUnvalilable,
+              StatusCode.serviceUnavailable,
             ),
           ),
         ),

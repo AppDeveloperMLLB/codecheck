@@ -9,4 +9,15 @@
     "files.watcherExclude": {
         "**/.fvm": true
     },
+    "cSpell.words": [
+        "afafafafdjiehafhfisahfoiehao",
+        "autovalidate",
+        "codecheck",
+        "Diagnosticable",
+        "fafjfaicjfjaifidoahfeoiandjvnlsafhehfaihfldcjfhioahfioahefoifd",
+        "Goldens",
+        "nodoc",
+        "riverpod",
+        "unfocus"
+    ],
 }

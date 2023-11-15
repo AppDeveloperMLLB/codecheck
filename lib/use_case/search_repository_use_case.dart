@@ -4,15 +4,15 @@ import 'package:codecheck/domain/repository/github_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final searchRepositoryUseCaseProvider = Provider(
-  (ref) => SearchRepsitoryUsecase(
+  (ref) => SearchRepositoryUseCase(
     ref.read(githubRepositoryProvider),
   ),
 );
 
-class SearchRepsitoryUsecase {
+class SearchRepositoryUseCase {
   final GithubRepository _repository;
 
-  SearchRepsitoryUsecase(this._repository);
+  SearchRepositoryUseCase(this._repository);
 
   Future<List<GithubRepositoryData>> fetchRepositories({
     required String searchWord,

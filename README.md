@@ -15,7 +15,7 @@
 ## 開発環境構築手順
 本プロジェクトでは、開発環境整備のため、以下のことを行なっている。
 - fvmでFlutterのバージョン管理
-- githooksでコミット前にコード整形
+- githooksでコミット前にコード整形, typoチェックを実行
 
 ### fvmの導入
 以下の手順を実行し、fvmを導入する
@@ -32,8 +32,22 @@ fvm flutter --version
 ````
 以降、本プロジェクトで`flutter`コマンドを使う場合、`fvm flutter`コマンドを使用する必要がある。
 
-### githooksの設定
-以下の手順を実行し、プロジェクトのgithooksを参照するように設定する
+### githooksの導入
+#### typosのインストール
+githooksでコミット時にtypoチェックを実行している  
+以下の手順を実行し、typosをインストールする
+```
+brew install typos-cli
+```
+
+以下のコマンドが実行できればOK
+
+```
+typos --version
+```
+
+#### githooksの設定
+以下の手順を実行し、プロジェクトのgithooksを参照するように設定する  
 - Terminalでプロジェクトのフォルダに移動する
 - 下記コマンドを実行し、githooksを設定する
 ```
@@ -47,3 +61,7 @@ chmod a+x .githooks/*
 ```
 git config --local --list | grep core.hookspath
 ```
+
+### おすすめのVSCode拡張機能
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+コミット時にtypoチェックを行っているが、上記を導入するとコーディング時に気づきやすくなるのでおすすめ

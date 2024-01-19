@@ -1,7 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
-part 'owner.freezed.dart';
-part 'owner.g.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
+import "package:flutter/foundation.dart";
+part "owner.freezed.dart";
+part "owner.g.dart";
 
 @freezed
 class Owner with _$Owner {

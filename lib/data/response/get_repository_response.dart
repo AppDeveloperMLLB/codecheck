@@ -1,6 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'get_repository_response.freezed.dart';
-part 'get_repository_response.g.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
+part "get_repository_response.freezed.dart";
+part "get_repository_response.g.dart";
 
 @freezed
 class GetRepositoryResponse with _$GetRepositoryResponse {

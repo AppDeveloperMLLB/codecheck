@@ -1,11 +1,11 @@
-import 'package:codecheck/domain/entity/github_repository_data.dart';
-import 'package:codecheck/presentation/app_theme.dart';
-import 'package:codecheck/presentation/widget/repository_details_view.dart';
-import 'package:flutter/material.dart';
-import 'package:golden_toolkit/golden_toolkit.dart';
+import "package:codecheck/domain/entity/github_repository_data.dart";
+import "package:codecheck/presentation/app_theme.dart";
+import "package:codecheck/presentation/widget/repository_details_view.dart";
+import "package:flutter/material.dart";
+import "package:golden_toolkit/golden_toolkit.dart";
 
 void main() {
-  testGoldens('RepositoryDetailsView', (tester) async {
+  testGoldens("RepositoryDetailsView", (tester) async {
     const testData = GithubRepositoryData(
       id: 1,
       fullName: "test1",
@@ -20,7 +20,7 @@ void main() {
         widget: _create(
           repositoryData: testData,
         ),
-        name: 'language_is_not_null',
+        name: "language_is_not_null",
       )
       ..addScenario(
         widget: _create(
@@ -28,7 +28,7 @@ void main() {
             language: null,
           ),
         ),
-        name: 'language_is_not_null',
+        name: "language_is_not_null",
       )
       ..addScenario(
         widget: _create(
@@ -40,11 +40,11 @@ void main() {
             openIssuesCount: 40000000000000,
           ),
         ),
-        name: 'long_text',
+        name: "long_text",
       );
 
     await tester.pumpDeviceBuilder(builder);
-    await screenMatchesGolden(tester, 'repository_details_view');
+    await screenMatchesGolden(tester, "repository_details_view");
   });
 }
 

@@ -6,6 +6,6 @@ class UnexpectedException implements Exception {
 
   @override
   String toString() {
-    return 'UnexpectedException{message: $message, statusCode: $statusCode}';
+    return "UnexpectedException{message: $message, statusCode: $statusCode}";
   }
 }

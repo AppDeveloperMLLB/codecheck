@@ -1,13 +1,13 @@
 enum AppRoute {
   top(
-    fullPath: '/',
-    relativePath: '/',
-    name: 'top',
+    fullPath: "/",
+    relativePath: "/",
+    name: "top",
   ),
   repositoryDetails(
-    fullPath: '/details',
-    relativePath: 'details',
-    name: 'repository-details',
+    fullPath: "/details",
+    relativePath: "details",
+    name: "repository-details",
   );
 
   final String fullPath;

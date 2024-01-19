@@ -9,6 +9,6 @@ class ServiceUnavailableException implements Exception {
 
   @override
   String toString() {
-    return 'ServiceUnavailableException{message: $message, statusCode: $statusCode}';
+    return "ServiceUnavailableException{message: $message, statusCode: $statusCode}";
   }
 }

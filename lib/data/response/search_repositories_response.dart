@@ -1,8 +1,8 @@
-import 'package:codecheck/domain/entity/owner.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:codecheck/domain/entity/owner.dart";
+import "package:freezed_annotation/freezed_annotation.dart";
 
-part 'search_repositories_response.freezed.dart';
-part 'search_repositories_response.g.dart';
+part "search_repositories_response.freezed.dart";
+part "search_repositories_response.g.dart";
 
 @freezed
 class SearchRepositoriesResponse with _$SearchRepositoriesResponse {

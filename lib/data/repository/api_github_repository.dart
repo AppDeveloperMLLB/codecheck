@@ -1,14 +1,14 @@
-import 'dart:convert';
-import 'package:codecheck/core/exception/service_unavailable_exception.dart';
-import 'package:codecheck/core/exception/unexpected_exception.dart';
-import 'package:codecheck/core/exception/client_exception.dart';
-import 'package:codecheck/data/request/search_repositories_request.dart';
-import 'package:codecheck/data/response/get_repository_response.dart';
-import 'package:codecheck/data/response/search_repositories_response.dart';
-import 'package:codecheck/data/status_code.dart';
-import 'package:codecheck/domain/entity/github_repository_data.dart';
-import 'package:codecheck/domain/repository/github_repository.dart';
-import 'package:http/http.dart' as http;
+import "dart:convert";
+import "package:codecheck/core/exception/service_unavailable_exception.dart";
+import "package:codecheck/core/exception/unexpected_exception.dart";
+import "package:codecheck/core/exception/client_exception.dart";
+import "package:codecheck/data/request/search_repositories_request.dart";
+import "package:codecheck/data/response/get_repository_response.dart";
+import "package:codecheck/data/response/search_repositories_response.dart";
+import "package:codecheck/data/status_code.dart";
+import "package:codecheck/domain/entity/github_repository_data.dart";
+import "package:codecheck/domain/repository/github_repository.dart";
+import "package:http/http.dart" as http;
 
 class APIGithubRepository implements GithubRepository {
   @override
@@ -53,8 +53,8 @@ class APIGithubRepository implements GithubRepository {
 
     // URLを作成
     var url = Uri.https(
-      'api.github.com',
-      'search/repositories',
+      "api.github.com",
+      "search/repositories",
       request.toJson(),
     );
 
@@ -73,7 +73,7 @@ class APIGithubRepository implements GithubRepository {
       List<SearchRepositoriesResponse> list = [];
       try {
         Map<String, dynamic> decoded = json.decode(response.body);
-        decoded['items'].forEach((item) {
+        decoded["items"].forEach((item) {
           list.add(SearchRepositoriesResponse.fromJson(item));
         });
 
@@ -120,8 +120,8 @@ class APIGithubRepository implements GithubRepository {
   Map<String, String> _getHeaders() {
     const token = String.fromEnvironment("token");
     return {
-      'Accept': 'application/vnd.github+json',
-      if (token.isNotEmpty) 'Authorization': 'Bearer $token'
+      "Accept": "application/vnd.github+json",
+      if (token.isNotEmpty) "Authorization": "Bearer $token"
     };
   }
 }

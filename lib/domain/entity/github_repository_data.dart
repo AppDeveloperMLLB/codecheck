@@ -1,7 +1,7 @@
-import 'package:codecheck/domain/entity/owner.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'github_repository_data.freezed.dart';
-part 'github_repository_data.g.dart';
+import "package:codecheck/domain/entity/owner.dart";
+import "package:freezed_annotation/freezed_annotation.dart";
+part "github_repository_data.freezed.dart";
+part "github_repository_data.g.dart";
 
 @freezed
 class GithubRepositoryData with _$GithubRepositoryData {

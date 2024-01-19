@@ -5,7 +5,7 @@ class ClientException implements Exception {
 
   @override
   String toString() {
-    return 'ClientException{message: $message}';
+    return "ClientException{message: $message}";
   }
 
   String get errorMessage => message;

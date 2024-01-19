@@ -16,6 +16,10 @@ void main() {
       openIssuesCount: 4,
     );
     final builder = DeviceBuilder()
+      ..overrideDevicesForAllScenarios(devices: [
+        Device.iphone11,
+        Device.tabletPortrait,
+      ])
       ..addScenario(
         widget: _create(
           repositoryData: testData,

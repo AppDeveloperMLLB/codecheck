@@ -14,6 +14,10 @@ import "../../test_data/github_repository_data_generator.dart";
 void main() {
   testGoldens("GithubRepositoryListView", (tester) async {
     final builder = DeviceBuilder()
+      ..overrideDevicesForAllScenarios(devices: [
+        Device.iphone11,
+        Device.tabletPortrait,
+      ])
       ..addScenario(
         widget: _create(
           override: githubRepositoriesProvider.overrideWith((ref, id) => []),

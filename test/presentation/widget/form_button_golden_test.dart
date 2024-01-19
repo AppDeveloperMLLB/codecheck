@@ -6,6 +6,10 @@ import "package:golden_toolkit/golden_toolkit.dart";
 void main() {
   testGoldens("FormButton", (tester) async {
     final builder = DeviceBuilder()
+      ..overrideDevicesForAllScenarios(devices: [
+        Device.iphone11,
+        Device.tabletPortrait,
+      ])
       ..addScenario(
         widget: _create(
           text: "test",

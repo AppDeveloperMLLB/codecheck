@@ -1,12 +1,12 @@
-import 'package:codecheck/presentation/app_theme.dart';
-import 'package:codecheck/presentation/validator/search_text_validator.dart';
-import 'package:codecheck/presentation/widget/input_text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:golden_toolkit/golden_toolkit.dart';
+import "package:codecheck/presentation/app_theme.dart";
+import "package:codecheck/presentation/validator/search_text_validator.dart";
+import "package:codecheck/presentation/widget/input_text_form_field.dart";
+import "package:flutter/material.dart";
+import "package:flutter_test/flutter_test.dart";
+import "package:golden_toolkit/golden_toolkit.dart";
 
 void main() {
-  testGoldens('InputTextFormField', (tester) async {
+  testGoldens("InputTextFormField", (tester) async {
     final TextEditingController controller = TextEditingController();
     final TextEditingController initialController = TextEditingController();
     const label = "InputTextFormField";
@@ -16,7 +16,7 @@ void main() {
           controller: initialController,
           label: label,
         ),
-        name: 'initial',
+        name: "initial",
       )
       ..addScenario(
         widget: _create(
@@ -28,10 +28,10 @@ void main() {
             key: scenarioWidgetKey,
             tester: tester,
             label: label,
-            text: 'test',
+            text: "test",
           );
         },
-        name: 'input_text',
+        name: "input_text",
       )
       ..addScenario(
         widget: Form(
@@ -48,20 +48,20 @@ void main() {
             key: scenarioWidgetKey,
             tester: tester,
             label: label,
-            text: 'test',
+            text: "test",
           );
           await _inputText(
             key: scenarioWidgetKey,
             tester: tester,
             label: label,
-            text: '',
+            text: "",
           );
         },
-        name: 'error',
+        name: "error",
       );
 
     await tester.pumpDeviceBuilder(builder);
-    await screenMatchesGolden(tester, 'input_text_form_field');
+    await screenMatchesGolden(tester, "input_text_form_field");
     controller.dispose();
     initialController.dispose();
   });

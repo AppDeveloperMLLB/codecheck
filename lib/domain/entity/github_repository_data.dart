@@ -1,7 +1,7 @@
-import 'package:codecheck/domain/entity/owner.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'github_repository_data.freezed.dart';
-part 'github_repository_data.g.dart';
+import "package:codecheck/domain/entity/owner.dart";
+import "package:freezed_annotation/freezed_annotation.dart";
+part "github_repository_data.freezed.dart";
+part "github_repository_data.g.dart";
 
 @freezed
 class GithubRepositoryData with _$GithubRepositoryData {
@@ -11,12 +11,12 @@ class GithubRepositoryData with _$GithubRepositoryData {
   const factory GithubRepositoryData({
     required int id,
     required String fullName,
-    Owner? owner,
-    String? language,
     required int stargazersCount,
     required int watchersCount,
     required int forksCount,
     required int openIssuesCount,
+    Owner? owner,
+    String? language,
   }) = _GithubRepositoryData;
   factory GithubRepositoryData.fromJson(Map<String, Object?> json) =>
       _$GithubRepositoryDataFromJson(json);

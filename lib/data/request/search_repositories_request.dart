@@ -1,7 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
-part 'search_repositories_request.freezed.dart';
-part 'search_repositories_request.g.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
+import "package:flutter/foundation.dart";
+part "search_repositories_request.freezed.dart";
+part "search_repositories_request.g.dart";
 
 @freezed
 class SearchRepositoriesRequest with _$SearchRepositoriesRequest {

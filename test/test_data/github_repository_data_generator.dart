@@ -1,4 +1,4 @@
-import 'package:codecheck/domain/entity/github_repository_data.dart';
+import "package:codecheck/domain/entity/github_repository_data.dart";
 
 class GithubRepositoryDataGenerator {
   static List<GithubRepositoryData> generate({required int length}) {

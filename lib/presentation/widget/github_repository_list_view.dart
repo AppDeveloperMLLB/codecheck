@@ -1,16 +1,16 @@
-import 'package:codecheck/core/router/app_route.dart';
-import 'package:codecheck/presentation/app_strings.dart';
-import 'package:codecheck/presentation/exception_message.dart';
-import 'package:codecheck/presentation/provider/github_repositories_provider.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import "package:codecheck/core/router/app_route.dart";
+import "package:codecheck/presentation/app_strings.dart";
+import "package:codecheck/presentation/exception_message.dart";
+import "package:codecheck/presentation/provider/github_repositories_provider.dart";
+import "package:flutter/material.dart";
+import "package:go_router/go_router.dart";
+import "package:hooks_riverpod/hooks_riverpod.dart";
 
 class GithubRepositoryListView extends HookConsumerWidget {
   final String searchWord;
   const GithubRepositoryListView({
-    super.key,
     required this.searchWord,
+    super.key,
   });
   @override
   Widget build(BuildContext context, WidgetRef ref) {

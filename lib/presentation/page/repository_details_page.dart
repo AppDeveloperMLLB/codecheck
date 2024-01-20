@@ -1,13 +1,13 @@
-import 'package:codecheck/domain/entity/github_repository_data.dart';
-import 'package:codecheck/presentation/app_strings.dart';
-import 'package:codecheck/presentation/widget/repository_details_title.dart';
-import 'package:codecheck/presentation/widget/repository_details_view.dart';
-import 'package:flutter/material.dart';
+import "package:codecheck/domain/entity/github_repository_data.dart";
+import "package:codecheck/presentation/app_strings.dart";
+import "package:codecheck/presentation/widget/repository_details_title.dart";
+import "package:codecheck/presentation/widget/repository_details_view.dart";
+import "package:flutter/material.dart";
 
 class RepositoryDetailsPage extends StatelessWidget {
   const RepositoryDetailsPage({
-    super.key,
     required this.repositoryData,
+    super.key,
   });
 
   final GithubRepositoryData repositoryData;

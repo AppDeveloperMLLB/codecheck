@@ -1,27 +1,31 @@
-import 'package:codecheck/presentation/app_theme.dart';
-import 'package:codecheck/presentation/widget/repository_details_title.dart';
-import 'package:flutter/material.dart';
-import 'package:golden_toolkit/golden_toolkit.dart';
+import "package:codecheck/presentation/app_theme.dart";
+import "package:codecheck/presentation/widget/repository_details_title.dart";
+import "package:flutter/material.dart";
+import "package:golden_toolkit/golden_toolkit.dart";
 
 void main() {
-  testGoldens('RepositoryDetailsTitle', (tester) async {
+  testGoldens("RepositoryDetailsTitle", (tester) async {
     final builder = DeviceBuilder()
+      ..overrideDevicesForAllScenarios(devices: [
+        Device.iphone11,
+        Device.tabletPortrait,
+      ])
       ..addScenario(
         widget: _create(
-          fullName: 'test',
+          fullName: "test",
         ),
-        name: 'short_name',
+        name: "short_name",
       )
       ..addScenario(
         widget: _create(
           fullName:
-              'fafjfaicjfjaifidoahfeoiandjvnlsafhehfaihfldcjfhioahfioahefoifd',
+              "fafjfaicjfjaifidoahfeoiandjvnlsafhehfaihfldcjfhioahfioahefoifd",
         ),
-        name: 'long_name',
+        name: "long_name",
       );
 
     await tester.pumpDeviceBuilder(builder);
-    await screenMatchesGolden(tester, 'repository_details_title');
+    await screenMatchesGolden(tester, "repository_details_title");
   });
 }
 

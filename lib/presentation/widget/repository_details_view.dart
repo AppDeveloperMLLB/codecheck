@@ -1,12 +1,12 @@
-import 'package:codecheck/domain/entity/github_repository_data.dart';
-import 'package:codecheck/presentation/app_strings.dart';
-import 'package:codecheck/presentation/widget/repository_details_view_text.dart';
-import 'package:flutter/material.dart';
+import "package:codecheck/domain/entity/github_repository_data.dart";
+import "package:codecheck/presentation/app_strings.dart";
+import "package:codecheck/presentation/widget/repository_details_view_text.dart";
+import "package:flutter/material.dart";
 
 class RepositoryDetailsView extends StatelessWidget {
   const RepositoryDetailsView({
-    super.key,
     required this.repositoryData,
+    super.key,
   });
   final GithubRepositoryData repositoryData;
 

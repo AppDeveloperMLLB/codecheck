@@ -1,10 +1,10 @@
-import 'package:codecheck/presentation/widget/avatar_image.dart';
-import 'package:flutter/material.dart';
+import "package:codecheck/presentation/widget/avatar_image.dart";
+import "package:flutter/material.dart";
 
 class RepositoryDetailsTitle extends StatelessWidget {
   const RepositoryDetailsTitle({
-    super.key,
     required this.fullName,
+    super.key,
     this.avatarUrl,
   });
   final String fullName;

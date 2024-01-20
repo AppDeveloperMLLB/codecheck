@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class InputTextFormField extends StatelessWidget {
   const InputTextFormField({
-    super.key,
     required this.controller,
     required this.label,
+    super.key,
     this.validator,
   });
 

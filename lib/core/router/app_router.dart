@@ -1,8 +1,8 @@
-import 'package:codecheck/core/router/app_route.dart';
-import 'package:codecheck/domain/entity/github_repository_data.dart';
-import 'package:codecheck/presentation/page/repository_details_page.dart';
-import 'package:codecheck/presentation/page/search_repository_page.dart';
-import 'package:go_router/go_router.dart';
+import "package:codecheck/core/router/app_route.dart";
+import "package:codecheck/domain/entity/github_repository_data.dart";
+import "package:codecheck/presentation/page/repository_details_page.dart";
+import "package:codecheck/presentation/page/search_repository_page.dart";
+import "package:go_router/go_router.dart";
 
 class AppRouter {
   AppRouter();

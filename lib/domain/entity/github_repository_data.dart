@@ -11,12 +11,12 @@ class GithubRepositoryData with _$GithubRepositoryData {
   const factory GithubRepositoryData({
     required int id,
     required String fullName,
-    Owner? owner,
-    String? language,
     required int stargazersCount,
     required int watchersCount,
     required int forksCount,
     required int openIssuesCount,
+    Owner? owner,
+    String? language,
   }) = _GithubRepositoryData;
   factory GithubRepositoryData.fromJson(Map<String, Object?> json) =>
       _$GithubRepositoryDataFromJson(json);

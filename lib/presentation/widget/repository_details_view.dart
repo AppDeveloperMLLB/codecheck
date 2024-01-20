@@ -5,8 +5,8 @@ import "package:flutter/material.dart";
 
 class RepositoryDetailsView extends StatelessWidget {
   const RepositoryDetailsView({
-    super.key,
     required this.repositoryData,
+    super.key,
   });
   final GithubRepositoryData repositoryData;
 

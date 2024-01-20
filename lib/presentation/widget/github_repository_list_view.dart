@@ -9,8 +9,8 @@ import "package:hooks_riverpod/hooks_riverpod.dart";
 class GithubRepositoryListView extends HookConsumerWidget {
   final String searchWord;
   const GithubRepositoryListView({
-    super.key,
     required this.searchWord,
+    super.key,
   });
   @override
   Widget build(BuildContext context, WidgetRef ref) {

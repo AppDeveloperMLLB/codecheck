@@ -6,8 +6,8 @@ import "package:flutter/material.dart";
 
 class RepositoryDetailsPage extends StatelessWidget {
   const RepositoryDetailsPage({
-    super.key,
     required this.repositoryData,
+    super.key,
   });
 
   final GithubRepositoryData repositoryData;

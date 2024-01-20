@@ -12,12 +12,12 @@ class SearchRepositoriesResponse with _$SearchRepositoriesResponse {
   const factory SearchRepositoriesResponse({
     required int id,
     required String fullName,
-    Owner? owner,
-    String? language,
     required int stargazersCount,
     required int forksCount,
     required int openIssuesCount,
     required String url,
+    Owner? owner,
+    String? language,
   }) = _SearchRepositoriesResponse;
   factory SearchRepositoriesResponse.fromJson(Map<String, Object?> json) =>
       _$SearchRepositoriesResponseFromJson(json);

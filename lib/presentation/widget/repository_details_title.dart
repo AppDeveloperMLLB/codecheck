@@ -3,8 +3,8 @@ import "package:flutter/material.dart";
 
 class RepositoryDetailsTitle extends StatelessWidget {
   const RepositoryDetailsTitle({
-    super.key,
     required this.fullName,
+    super.key,
     this.avatarUrl,
   });
   final String fullName;
